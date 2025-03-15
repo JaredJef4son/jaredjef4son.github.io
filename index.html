@@ -12,6 +12,60 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Custom styles to increase navigation item widths */
+			#header nav ul {
+				text-align: center; /* Center the entire list */
+				margin: 0;
+				padding: 0;
+				font-size: 0; /* Remove whitespace between inline-block elements */
+			}
+			#header nav ul li {
+				min-width: 150px; /* Increased width for navigation items */
+				margin: 0; /* Remove margin completely */
+				padding: 0; /* Remove any padding */
+				display: inline-block; /* Use inline-block instead of flex */
+				font-size: 1rem; /* Reset font size after zeroing out in parent */
+			}
+			#header nav ul li a {
+				width: 100%;
+				display: block; /* Make anchor fill the entire li element */
+				text-align: center;
+				border-left: 1px solid rgba(255, 255, 255, 0.15); /* Subtle border for separation */
+				border-right: 1px solid rgba(255, 255, 255, 0.15);
+				margin: 0; /* No margin */
+				padding: 0 0.75rem; /* Add horizontal padding inside instead */
+				box-sizing: border-box; /* Include border in width calculation */
+			}
+			/* Remove border from first and last items */
+			#header nav ul li:first-child a {
+				border-left: none;
+			}
+			#header nav ul li:last-child a {
+				border-right: none;
+			}
+			/* Add hover indication */
+			#header nav ul li a:hover {
+				background-color: rgba(255, 255, 255, 0.05);
+				}
+				
+			#lottie-container {
+				width: 80%;
+				height: 80%;
+				position: relative;
+				margin: 10% auto
+				}
+				
+			/* Increase the size of the logo circle */
+			#header .logo {
+				width: 10.5rem;      /* Increase from default (likely 5.5rem) */
+				height: 10.5rem;     /* Increase from default (likely 5.5rem) */
+				line-height: 10.5rem; /* Match the height */
+				border: solid 1px #ffffff;
+				border-radius: 100%;
+				
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -20,8 +74,9 @@
 
 				<!-- Header -->
 					<header id="header">
+						
 						<div class="logo">
-							<span class="icon far fa-file"></span>
+							<div id="lottie-container"></div>
 						</div>
 						<div class="content">
 							<div class="inner">
@@ -32,10 +87,10 @@
 						</div>
 						<nav>
 							<ul>
-								<li><a href="#intro">Project1</a></li>
-								<li><a href="#work">Project2</a></li>
-								<li><a href="#about">Project3</a></li>
-								<li><a href="#project4">Project4</a></li>
+								<li><a href="#intro">Exercise App</a></li>
+								<li><a href="#work">ToDo App</a></li>
+								<li><a href="#about">Menu App</a></li>
+								<li><a href="#project4">Petter</a></li>
 								<!--<li><a href="#contact">Resume</a></li> -->
 								<li><a href="#aboutMe">About Me</a></li>
 								<!-- <li><a href="#elements">Elements</a></li> -->
@@ -61,23 +116,75 @@
 								<p>This was a design project that I did. I created a ToDo app that allows people to create and manipulate lists. I added several different screen states including a login screen, a home screen, and screens for adding and deleting tasks. For this design, I used Figma to create the different screens. I struggled with the colors for the login screens but found that by using references, I found a nice mix of colors. 
 								</p>
 								<h3>Sign in pages</h3>
-								<span class="image main"><img src=images/ToDo-images/0007.jpg alt="" /></span>
-								<span class="image main"><img src=images/ToDo-images/0008.jpg alt="" /></span>
+								<div class="image-container" style="display: flex; gap: 10px; justify-content: space-between;">
+									<div style="flex: 1;">
+										<span class="image main"><img src=images/ToDo-images/0007.jpg alt="" /></span>
+									</div>
+									<div style="flex: 1;">
+										<span class="image main"><img src=images/ToDo-images/0008.jpg alt="" /></span>
+									</div>
+								</div>
 								<h3>App Screens</h3>
-								<span class="image main"><img src=images/ToDo-images/0003.jpg alt="" /></span>
-								<span class="image main"><img src=images/ToDo-images/0004.jpg alt="" /></span>
-								<span class="image main"><img src=images/ToDo-images/0005.jpg alt="" /></span>
-								<span class="image main"><img src=images/ToDo-images/00010.jpg alt="" /></span>
-								<span class="image main"><img src=images/ToDo-images/0009.jpg alt="" /></span>
+								<div class="image-container" style="display: flex; gap: 10px; justify-content: space-between;">
+									<div style="flex: 1;">
+										<span class="image main"><img src=images/ToDo-images/0003.jpg alt="" /></span>
+									</div>
+									<div style="flex: 1;">
+										<span class="image main"><img src=images/ToDo-images/0004.jpg alt="" /></span>
+									</div>
+								</div>
+								<div class="image-container" style="display: flex; gap: 10px; justify-content: space-between;">
+									<div style="flex: 1;">
+										<span class="image main"><img src=images/ToDo-images/0005.jpg alt="" /></span>
+									</div>
+									<div style="flex: 1;">
+										<span class="image main"><img src=images/ToDo-images/00010.jpg alt="" /></span>
+									</div>
+								</div>
+								<div class="image-container" style="display: flex; justify-content: center;">
+									<div style="flex: 0 1 50%;">
+										<span class="image main"><img src=images/ToDo-images/0009.jpg alt="" /></span>
+									</div>
+								</div>
 								
 							</article>
 
 							<!-- Project 4 -->
 							<article id="project4">
-								<h2 class="major">Quiz App</h2>
-								<p>This is a quiz app that I created using React Native. It uitilises React Native navigation, and has a question and summary component. It supports three tyes of answers, true/false, multiple choice, and multiple answer. A JSON file is used to provide the data for the question componet. The final summary take all the users inputed andswers and returns weather they were right or wong. It also shows the correct answers. </p>
-								<span class="image main"><img src="images/2024-04-08 19-41-58.gif" alt="" /></span>
+								<h2 class="major">Petter</h2>
+								<p>This is a pet app that I created with a team of 5. It is an app designed to make life with pets a little easier. Here are a few of the low fidelity screens and the final screens.  </p>
+								<h3>App Screens</h3>
+								<span class="image main"><img src="images/Petter Mock new app alert.png" alt="Quiz App Alert Dialog" /></span>
+								<h4>Home Hi-FI and Lo-Fi</h4>
+								<div class="image-container" style="display: flex; gap: 10px; justify-content: space-between;">
+									<div style="flex: 1;">
+										<span class="image main"><img src="images/Home.png" alt="Quiz App Home Screen" /></span>
+									</div>
+									<div style="flex: 1;">
+										<span class="image main"><img src="images/Home - Hifi (1).png" alt="Quiz App High Fidelity Design" /></span>
+									</div>
+								</div>
+								<h4>Products Hi-FI and Lo-Fi</h4>
+								<div class="image-container" style="display: flex; gap: 10px; justify-content: space-between;">
+									<div style="flex: 1;">
+										<span class="image main"><img src="images/Products - Dog - Vet.png" alt="Quiz App Home Screen" /></span>
+									</div>
+									<div style="flex: 1;">
+										<span class="image main"><img src="images/Products - Cat - Vet.png" alt="Quiz App High Fidelity Design" /></span>
+									</div>
+								</div>
+								<h4> Calendar and Login</h4>
+								<div class="image-container" style="display: flex; gap: 10px; justify-content: space-between;">
+									<div style="flex: 1;">
+										<span class="image main"><img src="images/Login- HiFi.png" alt="Quiz App Home Screen" /></span>
+									</div>
+									<div style="flex: 1;">
+										<span class="image main"><img src="images/Calendar - Day.png" alt="Quiz App High Fidelity Design" /></span>
+									</div>
+								</div>
+								<h3>Style Guide</h3>
 								
+								<span class="image main"><img src="images/Pett style guide.png" alt="Quiz App Style Guide" /></span>
 								
 							</article>
 
@@ -363,11 +470,24 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<div id="bg"></div>
 
 		<!-- Scripts -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+			  document.addEventListener('DOMContentLoaded', function() {
+			    // Initialize the animation
+			    const animation = lottie.loadAnimation({
+			      container: document.getElementById('lottie-container'),
+			      renderer: 'svg',
+			      loop: true,
+			      autoplay: true,
+			      path: 'images/Animation - 1741980307273 (1).json' // Path to your Lottie JSON file
+			    });
+			  });
+			</script>
 
 	</body>
 </html>
